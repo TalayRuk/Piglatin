@@ -30,6 +30,16 @@ for something that is not a word, do not change it or add -AY
 input = 8675309
 result = 8675309
 
+change into lowercase
+input = a
+result = a
+input = A
+result = a
+input = AaA
+result = aaa
+input = Aa4A
+result = aa4a
+
 For words beginning with a vowel, add "ay" to the end.
 input = animal
 result = animalay
