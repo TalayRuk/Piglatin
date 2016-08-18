@@ -1,36 +1,42 @@
 // translating function
 var vowelChecker = function(piglatinphrase) {
-  for( var i=0 ; i<piglatinphrase.length; i++ ){
-    if(piglatinphrase.charAt(i) === 'a' ||
-      piglatinphrase.charAt(i) === 'e' ||
-      piglatinphrase.charAt(i) === 'i' ||
-      piglatinphrase.charAt(i) === 'o' ||
-      piglatinphrase.charAt(i) === 'u' ||
-      piglatinphrase.charAt(i) === 'y') {
-        alert("this is a vowel");
+  var result;
+  // for( var i=0 ; i<piglatinphrase.length; i++ ){
+    if(piglatinphrase.charAt(0) === 'a' ||
+      piglatinphrase.charAt(0) === 'e' ||
+      piglatinphrase.charAt(0) === 'i' ||
+      piglatinphrase.charAt(0) === 'o' ||
+      piglatinphrase.charAt(0) === 'u' ||
+      piglatinphrase.charAt(0) === 'y') {
         var result = true;
-      }else{
-        alert("not a vowel");
+      } else {
         var result = false;
       }
-  };
+  // };
   return result;
 };
 
-var numberChecker = function(inputWord) {
-  for(var i =0; i < inputWord.length; i++) {
-    if (!isNaN(inputWord[i])) {
+
+var numberChecker = function(piglatinphrase) {
+  for(var i =0; i < piglatinphrase.length; i++) {
+    if (!isNaN(piglatinphrase[i])) {
       return true;
     }
   }
   return false;
 }
 
-var piglatin = function(word) {
-  if (numberChecker(word)) {
-    return word + " contains at least one number. Please try again.";
-  } else {
-    return word + "ay";
+var piglatin = function(piglatinphrase) {
+  if (numberChecker(piglatinphrase)) {
+    return piglatinphrase + " contains at least one number. Please try again.";
+  }else if (vowelChecker(piglatinphrase)){
+    alert("vowel Checker");
+    return piglatinphrase + "ay";
+  }else {
+    alert("con Checker");
+    var anotherpiglatinphrase = piglatinphrase.slice(0,1);
+    var wordending = piglatinphrase.slice(1,piglatinphrase.length);
+    return  wordending + anotherpiglatinphrase + "ay";
   }
 }
 
