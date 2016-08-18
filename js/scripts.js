@@ -1,4 +1,26 @@
 // translating function
+
+// ****Hint for qu
+// // for pig latin
+// // 
+// // var word = "square";
+// // var i = word.split("").indexOf("q"); // i = 1; ***
+// ****split put string into array & w/("") split it into ["s","q","u","a","r", "e"];
+// ****ie; split () split it into word [square]
+// // if ( word[i] === "q" && word[i+1] === "u") {
+// //   var ending = word.slice(i+2,word.length); //= "are"; 
+// *****for square .. slice (3,word.length) or just put in slice(3)=are
+// //   var output = ending + word.slice(0, i+2) + "ay";
+// // }
+// //
+// // square
+// // arsquay
+
+
+
+
+
+
 var vowelChecker = function(piglatinphrase) {
   var result;
   // for( var i=0 ; i<piglatinphrase.length; i++ ){
